@@ -20,14 +20,14 @@ def build_recommendation_engine(df):
 def get_recommendations(productId, df, Tfidf_matrix, top_n=5):
 
     try:
-        idx = df[df[productId] == productId].index[0]
+        idx = df[df['productId'] == productId].index[0]
     except IndexError:
         print(f"productId '{productId}' not found in the dataset!")
         return None
     
     cosine_sim = cosine_similarity(Tfidf_matrix[idx], Tfidf_matrix).flatten()
 
-    similar_indices = cosine_sim.argsort()[-(top_n + 1):1][::-1]
+    similar_indices = cosine_sim.argsort()[-(top_n + 1):][::-1]
 
     return df.iloc[similar_indices]
 

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleSync | AI Fashion Recommendations</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header Section -->
+        <header class="main-header">
+            <h1>✨ StyleSync</h1>
+            <p class="subtitle">Your AI-Powered Hybrid Fashion Recommendation Engine</p>
+        </header>
+
+        <div class="content-layout">
+            <!-- Sidebar Selection Panel -->
+            <aside class="sidebar">
+                <h2>🔍 Choose a Product</h2>
+                <div class="form-group">
+                    <label for="product-select">Select a clothing item to match:</label>
+                    <select id="product-select">
+                        <option value="" disabled selected>Loading fashion catalog...</option>
+                    </select>
+                </div>
+
+                <!-- Selected Item Profile Details -->
+                <div id="selected-profile" class="selected-profile hidden">
+                    <h3>Selected Item Profile</h3>
+                    <div class="metric-box">
+                        <span class="metric-label">Brand</span>
+                        <span id="profile-brand" class="metric-value">-</span>
+                    </div>
+                    <div class="metric-box">
+                        <span class="metric-label">Color</span>
+                        <span id="profile-color" class="metric-value">-</span>
+                    </div>
+                    <div class="metric-box">
+                        <span class="metric-label">Price</span>
+                        <span id="profile-price" class="metric-value">-</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="main-content">
+                <!-- Detailed view of selected item -->
+                <section id="item-details-section" class="details-section hidden">
+                    <h2 id="details-title">Product Details</h2>
+                    <div class="details-grid">
+                        <p><strong>Category:</strong> <span id="details-category">-</span></p>
+                        <p><strong>Color Shade:</strong> <span id="details-shade">-</span></p>
+                        <p><strong>Description:</strong> <span id="details-description">-</span></p>
+                    </div>
+                </section>
+
+                <!-- Recommendation Action & Results -->
+                <section class="recommendations-section">
+                    <h3>👗 StyleSync Personalized Matches</h3>
+                    <button id="sync-btn" class="btn-primary">Generate Sync Recommendations</button>
+
+                    <!-- Loading Spinner -->
+                    <div id="loading-spinner" class="spinner hidden">
+                        <div class="double-bounce1"></div>
+                        <div class="double-bounce2"></div>
+                    </div>
+
+                    <!-- Recommendations Grid -->
+                    <div id="recommendations-grid" class="rec-grid">
+                        <!-- Custom JS will inject matching product cards here -->
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
